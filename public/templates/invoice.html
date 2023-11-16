@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="../css/invoicecss.css">
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>	
+<button style="margin-top: 20px;margin-left: 20px;" type="button" class="buttonmio" ui-sref="panel.inicio" >Home</button>
+
+<div class="padre">
+    <div class="hijo">
+        <div class="invoice-box">
+			<table cellpadding="0" cellspacing="0">
+				<tr class="top">
+					<td colspan="2">
+						<table>
+							<tr>
+								<td>
+									 <b>{{::USER.nombre}}</b> <br />
+									{{::USER.email}}
+								</td>
+
+								<td>
+									 <b>Invoice:</b> #{{invoice[0].numero_invoice}}<br/>
+									 <b>Created:</b>  {{invoice[0].fecha}}<br />
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr class="heading">
+					<td>Tipo de Transacion</td>
+
+					<td>Cantidad</td>
+				</tr>
+
+				<tr class="details">
+					<td>{{invoice[0].tipo_transaccion}}</td>
+
+
+					<td>{{invoice[0].saldo_transaccion | formatoMiles}}</td>
+				</tr>
+
+				<tr class="heading">
+					<td>Billetes en el cajero</td>
+
+					<td>Cantidad</td>
+				</tr>
+
+				<tr class="item" ng-repeat="billete in billetes">
+					<td>Billetes de {{billete.denominacion}}</td>
+					<td>{{billete.cantidad | formatoMiles}}</td>
+				</tr>
+				
+				<tr class="heading">
+					<td>Saldo</td>
+
+					<td>Cantidad</td>
+				</tr>
+
+
+				<tr class="item">
+					<td>Saldo en efectivo</td>
+
+					<td>${{invoice[0].saldo | formatoMiles}}</td>
+				</tr>
+
+
+				<tr class="item">
+					<td>Saldo en cajero</td>
+
+					<td>${{saldocajero[0].saldocajero | formatoMiles}}</td>
+				</tr>
+
+
+				<tr class="total">
+					<td></td>
+
+					<td>Total: ${{saldocajero[0].saldocajero + invoice[0].saldo | formatoMiles}}</td>
+				</tr>
+			</table>
+</div>
+    </div>
+</div>
+
+

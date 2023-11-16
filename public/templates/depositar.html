@@ -1,0 +1,159 @@
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+
+<div ng-show="insuficiente"  class="error">
+    <div class="error__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none"><path fill="#393a37" d="m13 13h-2v-6h2zm0 4h-2v-2h2zm-1-15c-1.3132 0-2.61358.25866-3.82683.7612-1.21326.50255-2.31565 1.23915-3.24424 2.16773-1.87536 1.87537-2.92893 4.41891-2.92893 7.07107 0 2.6522 1.05357 5.1957 2.92893 7.0711.92859.9286 2.03098 1.6651 3.24424 2.1677 1.21325.5025 2.51363.7612 3.82683.7612 2.6522 0 5.1957-1.0536 7.0711-2.9289 1.8753-1.8754 2.9289-4.4189 2.9289-7.0711 0-1.3132-.2587-2.61358-.7612-3.82683-.5026-1.21326-1.2391-2.31565-2.1677-3.24424-.9286-.92858-2.031-1.66518-3.2443-2.16773-1.2132-.50254-2.5136-.7612-3.8268-.7612z"></path></svg>
+    </div>
+    <div class="error__title">Dinero Insuficiente!</div>
+</div>
+
+<button style="margin-top: 20px;margin-left: 20px;" type="button" class="buttonmio" ui-sref="panel.inicio" >Volver</button>
+    
+    <div class="containerreal">
+        
+        <div class="cardreal">
+            
+            <div class="card-innerreal">
+                <div class="frontreal">
+                    <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                    <div class="rowreal">
+                        <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="60px">
+                        <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px">
+                    </div>
+                    <div class="rowreal card-noreal">
+                        <p>{{numeroDeCuenta}}</p>
+                        
+                    </div>
+                    <div class="rowreal card-holderreal">
+                        <p>TITULAR</p>
+                        <p>VÁLIDO HASTA</p>
+                    </div>
+                    <div class="rowreal namereal">
+                        <p>{{::USER.nombre}}</p>
+                        <p>{{::USER.fecha_expira}}</p>
+                    </div>
+                    
+                </div>
+                
+                <div class="back">
+                    <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                    <div class="barreal"></div>
+                    <div class="rowreal card-cvvreal">
+                        <div>
+                            <img src="https://i.ibb.co/S6JG8px/pattern.png">
+                        </div>
+                        <p>{{::USER.CVV}}</p>
+                    </div>
+                    <div class="rowreal card-textreal">
+                        <p>this is a virtual card design using HTML and CSS. You can aslo design something like this.</p>
+                    </div>
+                    <div class="rowreal ">
+                        <p>CUSTOMER SIGNATURE</p>
+                        <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="80px">
+                    </div>
+                </div>
+                
+            </div>
+           
+
+        </div>
+        
+    </div>
+    
+    
+    <div class="atmdepositar">
+        
+       <div style="margin-top: 50px;">
+        <div >
+            <h1 style="text-align: center; color: white;"> <b style="font-family: 'Skeina';font-size: 50px;">Complete los datos</b> </h1>
+        </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+            
+                <div class="retirar">
+                    <form ng-submit="consignar('Deposito')">
+                        <div class="mb-3 row" >
+                            <label for="staticEmail" class="col-sm-3 col-form-label"><b style="font-family: 'Skeina';font-size: 20px;">Numero de cuenta :</b> </label>
+                            <div class="col-sm-6">
+                            <input style="color: white;margin-top: 5px;font-size: 30px;" type="text" readonly class="form-control-plaintext"  value="{{numeroDeCuenta}}">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 row">
+                            <label style="text-align: center;" for="staticEmail" class="col-sm-12 col-form-label"><b style="font-family: 'Skeina';font-size:25px; ">¿Cuanto billetes desea consignar desea consignar?</b> </label>
+                            <div class="col-sm-12" style="display: flex;">
+                              <!-- Contenedor para los botones -->
+                              <div style="display: flex; flex-direction: column; margin-right: 20px;">
+                                <button ng-click="guardarValor(1000); botonActivo = 'boton1'" ng-style="botonActivo === 'boton1' ? estiloActivo : {}" type="button" class="buttonmio" style="margin-top: 51px;margin-bottom: 10px;">$1.000</button>
+                                <button ng-click="guardarValor(2000); botonActivo = 'boton2'" ng-style="botonActivo === 'boton2' ? estiloActivo : {}" type="button" class="buttonmio" style="margin-top: 10px;margin-bottom: 10px;">$2.000</button>
+                                <button ng-click="guardarValor(5000); botonActivo = 'boton3'" ng-style="botonActivo === 'boton3' ? estiloActivo : {}" type="button" class="buttonmio" style="margin-top: 10px;margin-bottom: 10px;">$5.000</button>
+                                <button ng-click="guardarValor(10000); botonActivo = 'boton4'" ng-style="botonActivo === 'boton4' ? estiloActivo : {}" type="button" class="buttonmio" style="margin-top: 10px;margin-bottom: 10px;">$10.000</button>
+                                <button ng-click="guardarValor(20000); botonActivo = 'boton5'" ng-style="botonActivo === 'boton5' ? estiloActivo : {}" type="button" class="buttonmio" style="margin-top: 10px;margin-bottom: 10px;">$20.000</button>
+                                <button ng-click="guardarValor(50000); botonActivo = 'boton6'" ng-style="botonActivo === 'boton6' ? estiloActivo : {}" type="button" class="buttonmio" style="margin-top: 10px;margin-bottom: 10px;">$50.000</button>
+                                <button ng-click="guardarValor(100000); botonActivo = 'boton7'" ng-style="botonActivo === 'boton7' ? estiloActivo : {}" type="button" class="buttonmio" style="margin-top: 10px;margin-bottom: 10px;">$100.000</button>
+
+                              </div>
+                              <!-- Contenedor para los conteos -->
+                              <div style="display: flex; flex-direction: column; justify-content: space-between;">
+
+                                   
+                                <table class="tablamio" >
+                                    <tr>
+                                      <th class="thmio">Coteo de billetes</th>
+                                      <th class="thmio">Eliminar billetes</th>
+                                    </tr>
+                                    <tr ng-repeat="(valor, conteo) in contadorBotones">
+                                      <td class="tdmio">Billetes de: {{valor}}, lleva <b>{{conteo}}</b></td>
+                                      <td class="tdmio"> <button ng-click="restarValor(valor)" type="button" class="buttonmio" >Restar 1 billete</button></td>
+
+                                    </tr>
+
+                                    
+                                  </table>
+
+                              </div>
+                            </div>
+                          </div>
+
+                        <div class="mb-3 row" >
+                            <label style="align-items: center;display: flex;" class="col-sm-4 col-form-label"><b style="font-family: 'Skeina';font-size: 20px;">Total a depositar :</b> </label>
+                            <div class="col-sm-3">
+                            <input style="color: white;margin-top: 5px;font-size: 30px;" type="text" readonly class="form-control-plaintext"  value="{{sumatotal}}">
+                            </div>
+                        </div>
+    
+                      
+                        <div class="mb-3 row">
+                            <label class="col-sm-2 col-form-label"><b style="font-family: 'Skeina';font-size: 20px;">CVV</b></label>
+                            <div class="col-sm-10">
+                            <input type="number" class="form-control" ng-model="cvv">
+                            </div>
+                        </div>
+    
+                        <div class="mb-3 row">
+                            <label  class="col-sm-2 col-form-label"><b style="font-family: 'Skeina';font-size: 20px;">PIN</b></label>
+                            <div class="col-sm-10">
+                            <input type="password" class="form-control" ng-model="pin">
+                            </div>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <button  type="submit" class="buttonmio"  ><b>DEPOSITAR</b></button>
+                        </div>
+                    </form>
+
+                   
+
+                  
+                </div>
+            
+          </div>
+       </div>
+    </div>
+    
+
+
+</body>
+
+
+</html>

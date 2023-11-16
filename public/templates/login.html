@@ -1,0 +1,77 @@
+
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+
+<link rel="stylesheet" href="css/styleslogin.css">
+
+<div ng-show="noexiste"  class="error">
+    <div class="error__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none"><path fill="#393a37" d="m13 13h-2v-6h2zm0 4h-2v-2h2zm-1-15c-1.3132 0-2.61358.25866-3.82683.7612-1.21326.50255-2.31565 1.23915-3.24424 2.16773-1.87536 1.87537-2.92893 4.41891-2.92893 7.07107 0 2.6522 1.05357 5.1957 2.92893 7.0711.92859.9286 2.03098 1.6651 3.24424 2.1677 1.21325.5025 2.51363.7612 3.82683.7612 2.6522 0 5.1957-1.0536 7.0711-2.9289 1.8753-1.8754 2.9289-4.4189 2.9289-7.0711 0-1.3132-.2587-2.61358-.7612-3.82683-.5026-1.21326-1.2391-2.31565-2.1677-3.24424-.9286-.92858-2.031-1.66518-3.2443-2.16773-1.2132-.50254-2.5136-.7612-3.8268-.7612z"></path></svg>
+    </div>
+    <div class="error__title">Usuario incorrecto!</div>
+</div>
+
+<div ng-show="existe"  class="error">
+    <div class="error__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none"><path fill="#393a37" d="m13 13h-2v-6h2zm0 4h-2v-2h2zm-1-15c-1.3132 0-2.61358.25866-3.82683.7612-1.21326.50255-2.31565 1.23915-3.24424 2.16773-1.87536 1.87537-2.92893 4.41891-2.92893 7.07107 0 2.6522 1.05357 5.1957 2.92893 7.0711.92859.9286 2.03098 1.6651 3.24424 2.1677 1.21325.5025 2.51363.7612 3.82683.7612 2.6522 0 5.1957-1.0536 7.0711-2.9289 1.8753-1.8754 2.9289-4.4189 2.9289-7.0711 0-1.3132-.2587-2.61358-.7612-3.82683-.5026-1.21326-1.2391-2.31565-2.1677-3.24424-.9286-.92858-2.031-1.66518-3.2443-2.16773-1.2132-.50254-2.5136-.7612-3.8268-.7612z"></path></svg>
+    </div>
+    <div class="error__title">Usuario Existente!</div>
+</div>
+
+
+<div ng-show="insertado"  class="true">
+    <div class="error__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none"><path fill="#393a37" d="m13 13h-2v-6h2zm0 4h-2v-2h2zm-1-15c-1.3132 0-2.61358.25866-3.82683.7612-1.21326.50255-2.31565 1.23915-3.24424 2.16773-1.87536 1.87537-2.92893 4.41891-2.92893 7.07107 0 2.6522 1.05357 5.1957 2.92893 7.0711.92859.9286 2.03098 1.6651 3.24424 2.1677 1.21325.5025 2.51363.7612 3.82683.7612 2.6522 0 5.1957-1.0536 7.0711-2.9289 1.8753-1.8754 2.9289-4.4189 2.9289-7.0711 0-1.3132-.2587-2.61358-.7612-3.82683-.5026-1.21326-1.2391-2.31565-2.1677-3.24424-.9286-.92858-2.031-1.66518-3.2443-2.16773-1.2132-.50254-2.5136-.7612-3.8268-.7612z"></path></svg>
+    </div>
+    <div class="error__title">Usuario Insertado!</div>
+</div>
+
+<div class="padre" >
+
+    <div class="hijo">
+        <div class="container" id="container">
+            <div class="form-container sign-up-container">
+                <form ng-submit="insertarusuarios()" style="color: black;">
+                    <h1>Crear cuenta</h1>
+                
+                    <span>Ingresa tus datos para crear tu cuenta.</span>
+                    <br>
+                    <input class="letrasinput" ng-model="nombre" type="text" placeholder="Name" />
+                    <input class="letrasinput" ng-model="email" type="email" placeholder="Email" />
+                    <input class="letrasinput" ng-model="password" type="password" placeholder="Password" />
+                    <input class="letrasinput" ng-model="pin" type="password" placeholder="PIN" />
+        
+                    <button type="submit">Registrarse</button>
+                </form>
+            </div>
+            <div class="form-container sign-in-container">
+                <form action="#" style="color: black;">
+                    <h1>Iniciar sesión</h1>
+                    <br>
+                    <input ng-model="email" class="letrasinput" type="email" placeholder="Email" />
+                    <input ng-model="password" class="letrasinput" type="password" placeholder="Password" />
+                    <a href="#">¿Olvidó su contraseña?</a>
+                    <button ng-click="mostrarusuarios(email,password)">Ingresar</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay">
+                    <div class="overlay-panel overlay-left">
+                        <h1>¡Bienvenid@!</h1>
+                        <p>Al crear tu cuenta, Se te generará automáticamente el número de tu tarjeta de crédito, el CVV y la fecha de expiración.</p>
+                        <button class="ghost" id="signIn">Ingresar</button>
+                    </div>
+                    <div class="overlay-panel overlay-right">
+                        <h1>Hola, amig@</h1>
+                        <p>Introduce tus datos personales y empieza a tu aventura con nosotros</p>
+                        <button class="ghost" id="signUp">Registrarse </button>
+                    </div>
+                </div>
+            </div> 
+        </div>
+    </div>
+
+</div>  
+
+<script src="../js/login.js"></script>

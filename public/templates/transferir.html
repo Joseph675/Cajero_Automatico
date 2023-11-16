@@ -1,0 +1,72 @@
+ <link rel="stylesheet" href="../css/invoicecss.css">
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>	
+<button style="margin-top: 20px;margin-left: 20px;" type="button" class="buttonmio" ui-sref="panel.inicio" >Home</button>
+
+<div ng-show="insuficiente"  class="error">
+    <div class="error__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none"><path fill="#393a37" d="m13 13h-2v-6h2zm0 4h-2v-2h2zm-1-15c-1.3132 0-2.61358.25866-3.82683.7612-1.21326.50255-2.31565 1.23915-3.24424 2.16773-1.87536 1.87537-2.92893 4.41891-2.92893 7.07107 0 2.6522 1.05357 5.1957 2.92893 7.0711.92859.9286 2.03098 1.6651 3.24424 2.1677 1.21325.5025 2.51363.7612 3.82683.7612 2.6522 0 5.1957-1.0536 7.0711-2.9289 1.8753-1.8754 2.9289-4.4189 2.9289-7.0711 0-1.3132-.2587-2.61358-.7612-3.82683-.5026-1.21326-1.2391-2.31565-2.1677-3.24424-.9286-.92858-2.031-1.66518-3.2443-2.16773-1.2132-.50254-2.5136-.7612-3.8268-.7612z"></path></svg>
+    </div>
+    <div class="error__title">Dinero Insuficiente!</div>
+</div>
+
+<div ng-show="transferenciabuena"  class="true">
+    <div class="error__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" height="24" fill="none"><path fill="#393a37" d="m13 13h-2v-6h2zm0 4h-2v-2h2zm-1-15c-1.3132 0-2.61358.25866-3.82683.7612-1.21326.50255-2.31565 1.23915-3.24424 2.16773-1.87536 1.87537-2.92893 4.41891-2.92893 7.07107 0 2.6522 1.05357 5.1957 2.92893 7.0711.92859.9286 2.03098 1.6651 3.24424 2.1677 1.21325.5025 2.51363.7612 3.82683.7612 2.6522 0 5.1957-1.0536 7.0711-2.9289 1.8753-1.8754 2.9289-4.4189 2.9289-7.0711 0-1.3132-.2587-2.61358-.7612-3.82683-.5026-1.21326-1.2391-2.31565-2.1677-3.24424-.9286-.92858-2.031-1.66518-3.2443-2.16773-1.2132-.50254-2.5136-.7612-3.8268-.7612z"></path></svg>
+    </div>
+    <div class="error__title">Transferencia Existosa!</div>
+</div>
+
+<div class="padre">
+    <div class="hijo">
+        <div class="invoice-box">
+			<table cellpadding="0" cellspacing="0">
+				<tr class="top">
+					<td colspan="2">
+						<table>
+							<tr>
+								<td>
+									<b>{{::USER.nombre}}</b> <br />
+									{{::USER.email}}
+								</td>
+
+							</tr>
+						</table>
+					</td>
+				</tr>
+
+				<tr class="heading">
+					<td>Usuarios disponibles</td>
+
+					<td>Accion</td>
+				</tr>
+
+				<tr class="item" ng-repeat="usu in usuarios">
+					<td>{{usu.nombre}}</td>
+					<td><button ng-click="seleccionarUsuario(usu.id_usuario)" class="btn btn-primary"  type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Transferir</button> </td>
+					
+				</tr>
+
+				<tr class="item" >
+					<td></td>
+					<td>
+						<div class="collapse" id="collapseExample">
+							<div class="card card-body">
+								<form ng-submit="transferir(saldo)">
+									<input ng-model="saldo" class="form-control-plaintext" type="text" style="border: solid 1px; border-radius: 10px; padding-left: 10px; padding-right: 10px;">
+									<br>
+									<button class="btn btn-primary" type="submit">Transferir</button>
+								</form>
+							</div>
+					  </div>
+					</td>
+				</tr>
+
+				
+			</table>
+</div>
+    </div>
+</div>
+
+

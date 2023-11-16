@@ -1,0 +1,75 @@
+
+<div id='stars'></div>
+<div id='stars2'></div>
+<div id='stars3'></div>
+
+
+<div class="container">
+  </div>
+    <div class="containerreal">
+        <div class="cardreal">
+            <div class="card-innerreal">
+                <div class="frontreal">
+                    <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                    <div class="rowreal">
+                        <img src="https://i.ibb.co/G9pDnYJ/chip.png" width="60px">
+                        <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="60px">
+                    </div>
+                    <div class="rowreal card-noreal">
+                        <p>{{numeroDeCuenta}}</p>
+                        
+                    </div>
+                    <div class="rowreal card-holderreal">
+                        <p>TITULAR</p>
+                        <p>VÁLIDO HASTA</p>
+                    </div>
+                    <div class="rowreal namereal">
+                        <p>{{::USER.nombre}}</p>
+                        <p>{{::USER.fecha_expira}}</p>
+                    </div>
+                </div>
+                <div class="back">
+                    <img src="https://i.ibb.co/PYss3yv/map.png" class="map-img">
+                    <div class="barreal"></div>
+                    <div class="rowreal card-cvvreal">
+                        <div>
+                            <img src="https://i.ibb.co/S6JG8px/pattern.png">
+                        </div>
+                        <p>{{::USER.CVV}}</p>
+                    </div>
+                    <div class="rowreal card-textreal">
+                        <p>this is a virtual card design using HTML and CSS. You can aslo design something like this.</p>
+                    </div>
+                    <div class="rowreal ">
+                        <p>CUSTOMER SIGNATURE</p>
+                        <img src="https://i.ibb.co/WHZ3nRJ/visa.png" width="80px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="atm">
+       <div style="margin-top: 130px;">
+        <h1 style=" text-align: center;color: white;"> <b style="font-family: 'Skeina'; font-size: 50px;">¿Qué deseas hacer {{::USER.nombre}}?</b> </h1>
+        <br>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+            <button style="width: 500px;font-family: 'Skeina';font-size: 20px;" type="button" class="buttonmio" ui-sref="panel.retirar">Retirar Dinero</button>
+            <br>
+            <button style="width: 500px;font-family: 'Skeina';font-size: 20px;" type="button" class="buttonmio" ui-sref="panel.depositar">Depositar Dinero</button>
+            <br>
+            <button style="width: 500px;font-family: 'Skeina';font-size: 20px;" type="button" class="buttonmio" ng-click="invoice('Consulta de Saldo')">Consultar Saldo</button>
+            <br>
+            <button style="width: 500px;font-family: 'Skeina';font-size: 20px;" type="button" class="buttonmio" ui-sref="panel.transferir">Transferir Saldo</button>
+            <br>
+            <button style="width: 500px;font-family: 'Skeina';font-size: 20px;" type="button" class="buttonmio" ui-sref="panel.vermovimientossaldo">Ver Movimientos</button>
+          </div>
+       </div>
+    </div>
+    
+
+
+</body>
+
+
+</html>
